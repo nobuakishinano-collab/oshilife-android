@@ -6,3 +6,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: ls -la
+
+
+
+git add .
+git commit -m "feat: initial Compose app (Hello Oshilife)"
+git push -u origin feature/compose-room-mvp
