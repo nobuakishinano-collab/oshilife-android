@@ -1,14 +1,14 @@
 name: Android CI
 on: [push, pull_request]
 jobs:
-  verify:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: ls -la
-
-
-
-git add .
-git commit -m "feat: initial Compose app (Hello Oshilife)"
-git push -u origin feature/compose-room-mvp
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - run: chmod +x gradlew
+      - run: ./gradlew assembleDebug
+      - run: ./gradlew testDebugUnitTest
