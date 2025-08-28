@@ -33,3 +33,8 @@ jobs:
 
       - name: Unit tests
         run: ./gradlew testDebugUnitTest
+
+git add .github/workflows/android-ci.yml
+git commit -m "chore: CI setup for Android (SDK + build)"
+git push
+
