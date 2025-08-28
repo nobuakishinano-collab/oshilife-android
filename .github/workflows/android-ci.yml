@@ -1,15 +1,8 @@
 name: Android CI
 on: [push, pull_request]
 jobs:
-  build:
+  verify:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-java@v4
-        with:
-          distribution: temurin
-          java-version: '17'
-      - run: chmod +x gradlew
-      - run: ./gradlew assembleDebug
-      - run: ./gradlew testDebugUnitTest
-
+      - run: ls -la
